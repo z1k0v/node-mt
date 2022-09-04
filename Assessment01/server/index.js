@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
+const port = 3001;
+
 mongoose.connect(
   "mongodb://localhost:27017/massyve",
   {
@@ -22,7 +24,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000"],
+    origin: [`http://localhost:${port}`],
   })
 );
 
@@ -30,4 +32,4 @@ app.use(express.json());
 
 app.use("/api", routes);
 
-app.listen(3001);
+app.listen(process.env.PORT || port);
