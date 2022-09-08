@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const port = 3001;
 
 mongoose.connect(
-  "mongodb+srv://dbmassyve:zakhia123123@massyvetech.dktbayc.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb://localhost:27017/massyve",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
